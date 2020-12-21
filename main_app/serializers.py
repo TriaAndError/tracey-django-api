@@ -1,7 +1,14 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from .models import Registration, ContactUs
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+class RegistrationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+        model = Registration
+        fields = ['email','first_name','last_name']
+
+class ContactUsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ContactUs
+        fields = ['first_name','last_name','email','message']

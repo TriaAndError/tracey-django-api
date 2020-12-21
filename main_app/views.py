@@ -1,9 +1,22 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from django.contrib.auth.models import  User
-from .serializers import UserSerializer
+from .models import Registration, ContactUs
+from .serializers import RegistrationSerializer, ContactUsSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+
+class RegistrationAPI(viewsets.ModelViewSet):
+    queryset = Registration.objects.all()
+    serializer_class = RegistrationSerializer
+
+
+class ContactUsAPI(viewsets.ModelViewSet):
+    queryset = ContactUs.objects.all()
+    serializer_class = ContactUsSerializer
+
+    
+
+
+
+
+
