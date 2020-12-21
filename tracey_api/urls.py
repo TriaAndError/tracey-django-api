@@ -13,8 +13,6 @@ router.register('contact_us', ContactUsAPI, basename='contact_us')
 
 
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
